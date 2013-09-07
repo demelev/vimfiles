@@ -1,0 +1,2 @@
+supertab.vmb: call delete('C:\Users\ShagraT\vimfiles/doc/supertab.txt')|call delete('C:\Users\ShagraT\vimfiles/plugin/supertab.vim')
+delimitMate-2.6.vba: call delete('C:\Users\ShagraT\vimfiles/plugin/delimitMate.vim')|call delete('C:\Users\ShagraT\vimfiles/autoload/delimitMate.vim')|call delete('C:\Users\ShagraT\vimfiles/doc/delimitMate.txt')
