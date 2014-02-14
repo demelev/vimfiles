@@ -1,6 +1,9 @@
-[submodule "bundle/vim-colorschemes.git"]
-	path = bundle/vim-colorschemes.git
-	url = git://github.com/flazz/vim-colorschemes.git
-[submodule "bundle/vim-nerdtree"]
-	path = bundle/vim-nerdtree
-	url = git://github.com/scrooloose/nerdtree
+[submodule "bundle/vim-colorschemes.git"]
+	path = bundle/vim-colorschemes.git
+	url = git://github.com/flazz/vim-colorschemes.git
+[submodule "bundle/vim-nerdtree"]
+	path = bundle/vim-nerdtree
+	url = git://github.com/scrooloose/nerdtree
+[submodule "bundle/vim-protodef"]
+	path = bundle/vim-protodef
+	url = git://github.com/derekwyatt/vim-protodef
