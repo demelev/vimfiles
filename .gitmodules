@@ -10,3 +10,33 @@
 [submodule "bundle/TagHighlight"]
 	path = bundle/TagHighlight
 	url = git://github.com/vim-scripts/TagHighlight
+[submodule "bundle/FuzzyFinder"]
+	path = bundle/FuzzyFinder
+	url = git://github.com/vim-scripts/FuzzyFinder
+[submodule "bundle/vimwiki"]
+	path = bundle/vimwiki
+	url = git://github.com/vim-scripts/vimwiki
+[submodule "bundle/Tabular"]
+	path = bundle/Tabular
+	url = git://github.com/vim-scripts/Tabular
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = git://github.com/Raimondi/delimitMate
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git://github.com/ervandew/supertab
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/vim-scripts/Tagbar
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim
+[submodule "bundle/vim-lua-ftplugin"]
+	path = bundle/vim-lua-ftplugin
+	url = git://github.com/xolox/vim-lua-ftplugin
+[submodule "bundle/a-vim"]
+	path = bundle/a-vim
+	url = git://github.com/vim-scripts/a.vim
+[submodule "bundle/L9"]
+	path = bundle/L9
+	url = git://github.com/vim-scripts/L9

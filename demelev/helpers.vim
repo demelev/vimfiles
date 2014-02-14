@@ -18,8 +18,10 @@ function! StAlignEq(line1, line2)
 	for lineNumber in range( a:line1, a:line2 )
 		call cursor(lineNumber, 1)
 		exec "normal f="
-		exec "normal ".(l:eqLen - virtcol("."))."i "
-		let idx += 1
+        let s:count = l:eqLen - virtcol('.')
+        if s:count > 0
+            exec "normal ".s:count."i "
+        endif
 	endfor
 
 	echo l:eqLen
