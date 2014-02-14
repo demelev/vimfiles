@@ -7,3 +7,6 @@
 [submodule "bundle/vim-protodef"]
 	path = bundle/vim-protodef
 	url = git://github.com/derekwyatt/vim-protodef
+[submodule "bundle/TagHighlight"]
+	path = bundle/TagHighlight
+	url = git://github.com/vim-scripts/TagHighlight
