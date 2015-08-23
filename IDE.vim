@@ -23,6 +23,10 @@ endif
 " Загружаем ранее сохраненную сессию <--
 silent cd "".g:projectDir
 
+" Добавляем путь в runtimepath
+let addRuntime = "set runtimepath+=".g:projectDir."/.vim"
+exec addRuntime
+
 " Загружаем настройки данного проекта
 if getfsize(".vim/project_settings.vim") >= 0
     source .vim/project_settings.vim
@@ -97,7 +101,8 @@ autocmd BufReadPost * :call SetProjectSyntax()| call SetProjectColors()
 
 map <a-o> :A<CR>
 map <a-i> :AV<CR>
-map <a-m> :FufBufferTag<cr>
+map <a-m> :CtrlPBufTag<cr>
+map <a-b> :CtrlPBuffer<cr>
 
 " connect tags lists
 let g:TagHighlightSettings['UserLibraries'] = []
@@ -135,7 +140,7 @@ command! UpdateLibrariesTags call UpdateLibrariesTags()
 function! UpdateProjectHL()
 
 endfunction
-let g:TagHighlightSettings['TagFileName'] = "project_tags"
-let g:TagHighlightSettings['TypesFileNameForce'] = "types_c.taghl"
-set tags+=project_tags
+"let g:TagHighlightSettings['TagFileName'] = "project_tags"
+"let g:TagHighlightSettings['TypesFileNameForce'] = "types_c.taghl"
+"set tags+=project_tags
 ReadTypes

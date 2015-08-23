@@ -69,6 +69,7 @@ function! UpdateMainTags()
     exec command
     UpdateTypesFileOnly
 endfunction
+command! UpdateMainTags call UpdateMainTags()
 
 function! UpdateThirdTags( name )
     for third in g:thirdTags
@@ -82,9 +83,43 @@ function! UpdateThirdTags( name )
     endfor
 endfunction
 "call UpdateTagsForChangedFiles()
+"
+" connect tags lists
+let g:TagHighlightSettings['UserLibraries'] = []
+let s:libraries = g:TagHighlightSettings['UserLibraries']
 
+for thirdLibrary in g:thirdTags 
+    call add(s:libraries, thirdLibrary[0].'.taghl')
+    if getfsize(thirdLibrary[0]) >= 0
+        exec 'set tags+='.thirdLibrary[0]
+    endif
+endfor
+
+function! UpdateLibrariesHL()
+    for tl in g:thirdTags
+        let g:TagHighlightSettings['TagFileName'] = tl[0]
+        let g:TagHighlightSettings['TypesFileNameForce'] = tl[0].".taghl"
+        UpdateTypesFileOnly
+    endfor
+
+    let g:TagHighlightSettings['TagFileName'] = "project_tags"
+    let g:TagHighlightSettings['TypesFileNameForce'] = "types_c.taghl"
+endfunction
+function! UpdateLibrariesTags()
+    for tl in g:thirdTags
+        call UpdateThirdTags(tl[0])
+    endfor
+
+    call UpdateLibrariesHL()
+endfunction
+command! UpdateLibrariesTags call UpdateLibrariesTags()
 autocmd BufWritePost *.cs call UpdateTags()
 autocmd BufReadPost *.cs :call SetProjectSyntax()| call SetProjectColors()
 
+let g:TagHighlightSettings['TagFileName'] = "project_tags"
+let g:TagHighlightSettings['TypesFileNameForce'] = "types_c.taghl"
 set tags+=project_tags
+
+map <a-m> :CtrlPBufTag<cr>
+map <a-b> :CtrlPBuff<cr>
 

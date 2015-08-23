@@ -40,3 +40,9 @@
 [submodule "bundle/L9"]
 	path = bundle/L9
 	url = git://github.com/vim-scripts/L9
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/cscope.vim"]
+	path = bundle/cscope.vim
+	url = git://github.com/vim-scripts/cscope.vim
